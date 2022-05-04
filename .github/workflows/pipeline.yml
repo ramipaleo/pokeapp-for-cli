@@ -2,8 +2,10 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+    pull_request:
+      branches: [main]
+      types: [opened, synchronize]
 
 jobs:
   deploy:
@@ -29,4 +31,4 @@ jobs:
         with:
           command: npm run test:e2e
           start: npm run start-test
-          wait-on: http://localhost:5000
+          wait-on: http://localhost:4000
