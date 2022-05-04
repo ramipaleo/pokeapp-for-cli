@@ -1,0 +1,17 @@
+name: Say Hello
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Echo the message
+        run: |
+          echo "Hola ramiro es mi primer workflow!"
+      - name: Dime la fecha
+        run: date
+      - run: ls -l
